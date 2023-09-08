@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="sign_up"><u>Employee Sign Up</u></string>
+    <string name="login"><u>Employee Login</u></string>
+
+    <array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+</resources>
