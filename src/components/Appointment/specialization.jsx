@@ -9,14 +9,12 @@ class Specialization extends Component{
             "https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396",
             "https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396",
             "https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396",
-            
             "https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396",
             "https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396",
             "https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396",
             "https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396",
             "https://st2.depositphotos.com/3051589/46575/i/450/depositphotos_465750336-stock-photo-doctor-appointment-schedule-checkup-calendar.jpg",
             "https://st2.depositphotos.com/3051589/46575/i/450/depositphotos_465750336-stock-photo-doctor-appointment-schedule-checkup-calendar.jpg",
-            
             "https://st2.depositphotos.com/3051589/46575/i/450/depositphotos_465750336-stock-photo-doctor-appointment-schedule-checkup-calendar.jpg",
         ],pageNo:1,
     }
