@@ -43,8 +43,8 @@ class Specialization extends Component{
 
             <div className="container-fluid py-3" style={{background:"#f1f3f6"}}>
                
-                <div className="container d-flex">
-                    <div className="mr-4" style={{width:"250px"}}>
+                <div className="container vfErx4">
+                    <div className="mr-4" style={{width:"220px"}}>
                         <select className="form-select cdsAw2" id="inlineFormCustomSelect">
                             <option  >Choose Specialization</option>
                             <option value="1">One</option>
@@ -52,8 +52,8 @@ class Specialization extends Component{
                             <option value="3">Three</option>
                         </select>
                     </div>
-                    <div className="d-flex">
-                        <div style={{width:"300px"}}>
+                    <div className="d-flex kcdSw">
+                        <div className="njCds4" >
                             <input className="form-control cdsAw2" type="text" name="q"  placeholder="Search..." autoComplete="off" />  
                         </div>
                         <div className="">
@@ -64,10 +64,10 @@ class Specialization extends Component{
                 <div className="mt-2">
                     <div className="row">
                     {arrSpeci1.map((sp,index)=>(
-                        <div className="col-4 mt-4 " key={index}>
+                        <div className="col-lg-4 col-sm-6 col-12 mt-4 " key={index}>
                             <div className="fdeAw3">
-                                <img src={sp} width="100%" height={225}/>
-                                <button className="laSew3">Specialization</button>
+                                <img src={sp} width="100%" />
+                                <div className="mt-4"><Link className="laSew3" to="/">Specialization</Link></div>
                             </div>
                         </div>
                     ))}
@@ -86,4 +86,4 @@ class Specialization extends Component{
     }
 
 }
-export default Specialization
+export default Specialization;
