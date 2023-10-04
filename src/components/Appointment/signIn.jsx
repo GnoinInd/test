@@ -8,7 +8,7 @@ class SignIn extends Component{
 
     render(){
         return(
-            <div className="container-fluid py-5" style={{background:"rgb(230, 230, 230)",height:"100vh"}}>
+            <div className="p-1">
             
                 <div className="hcdZs4">
                     <h4 className="text-center mb-4">Sign In</h4>
@@ -21,10 +21,10 @@ class SignIn extends Component{
                         <button className="kjcdS4 ml-3">Sign Up</button>
                     </div>
                     <div className="text-center mt-4">
-                        <div className="kiuCd4"><i class="fa-brands fa-facebook-f mr-1"></i>facebook</div>
+                        <div className="kiuCd4"><i className="fa-brands fa-facebook-f mr-1"></i>facebook</div>
                     </div>
                     <div className="text-center mt-3">
-                        <div className="kiuaw3"><i class="fa-brands fa-google mr-1"></i>Google</div>
+                        <div className="kiuaw3"><i className="fa-brands fa-google mr-1"></i>Google</div>
                     </div>
                     <div className="row mt-4 py-2" style={{background:"#e9e7e7"}}>
                         <div className="my-2">Download our <span className="text-primary">Ask</span> <span className="text-warning">Apollo</span> App</div>
