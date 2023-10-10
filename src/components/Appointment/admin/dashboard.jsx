@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
-import ImgLogo from "./imgMenu.png"
+import ImgLogo from "../admin/imgMenu.png"
 class Dashboard extends Component{
     state={
         menuList:[
@@ -12,15 +12,15 @@ class Dashboard extends Component{
             // {name:"My Team",option:[]},
             // {name:"HRMS",option:[]},
             // {name:"My Reports",option:[]},
-            {name:"Hospital",option:["Show hospital","Add Hospital","Update Hospital","Hospital Notification"]},
-            {name:"Location",option:["Add Location","Show Location"]},
-            {name:"Area",option:["Show area","Add area"]},
-            {name:"Doctor",option:["Add doctor","Show doctor"]},
-            {name:"Shift",option:["Add shift","Show shift"]},
-            {name:"Specialization",option:["Show Specialization","Add Specialization"]},
-            {name:"Notification",option:["Hospital Notification"]},
-            {name:"Admin",option:["Show admin","Update","Add admin"]},
-            {name:"Role ",option:["Add rol","Show rol","Update role"]},
+            {name:"Hospital",option:[{name:"Show hospital",link:"#"},{name:"Add Hospital",link:"/buildProfile"},{name:"Update Hospital",link:"#"},{name:"Hospital Notification",link:"#"}]},
+            {name:"Location",option:[{name:"Add Location",link:"#"},{name:"Show Location",link:"#"}]},
+            {name:"Area",option:[{name:"Show area",link:"#"},{name:"Add area",link:"#"}]},
+            {name:"Doctor",option:[{name:"Add doctor",link:"#"},{name:"Show doctor",link:"#"}]},
+            {name:"Shift",option:[{name:"Add shift",link:"#"},{name:"Show shift",link:"#"}]},
+            {name:"Specialization",option:[{name:"Show Specialization",link:"#"},{name:"Add Specialization",link:"#"}]},
+            {name:"Notification",option:[{name:"Hospital Notification",link:"#"}]},
+            {name:"Admin",option:[{name:"Show admin",link:"#"},{name:"Update",link:"#"},{name:"Add admin",link:"#"}]},
+            {name:"Role ",option:[{name:"Add rol",link:"#"},{name:"Show rol",link:"#"},{name:"Update role",link:"#"}]},
 
         ],
         menuView:-1
@@ -74,7 +74,9 @@ class Dashboard extends Component{
                                 {menuView===index&&
                                 <div className="mt-1">
                                     {m1.option.map((p1,index)=>(
-                                        <li key={index}><i className="fa-solid fa-house-chimney fa-xs"></i>{p1}</li>
+                                        <Link  to={p1.link}>
+                                            <li key={index}><i className="fa-solid fa-house-chimney fa-xs"></i>{p1.name}</li>
+                                        </Link>
                                     ))}
                                 </div>
                                 }

@@ -1,7 +1,7 @@
 let express = require("express") ;
 let app = express();
 
-let {hospitals} = require("./hospitalData");
+let {hospitals,specztions,doctors,patients} = require("./hospitalData");
 app.use(express.json ());
 app.use( function (req, res, next) {
 res.header("Access-Control-Allow-Origin","*");
@@ -16,6 +16,35 @@ app.listen(port,()=>console.log(`Listening on port ${port}!`));
 app.get("/hospitals",function(req,res){
     res.send(hospitals);
 });
+app.get("/specztions",function(req,res){
+    res.send(specztions);
+});
+
+app.get("/allhospitals",function(req,res){
+    let hospitalsArr = [];
+    hospitals.map(h1=>{
+        h1.cities.map(c1=>{
+            c1.hospitals.map(h1=>{hospitalsArr.push(h1)})
+        })
+    })
+    res.send(hospitalsArr);
+});
+app.get("/allhospitals/:id",function(req,res){
+    let id = req.params.id;
+    let hospitalsArr = [];
+    hospitals.map(h1=>{
+        h1.cities.map(c1=>{
+            c1.hospitals.map(h1=>{hospitalsArr.push(h1)})
+        })
+    })
+    let hospital = hospitalsArr.find(h1=>h1.id==id);
+    res.send(hospital);
+});
+
+app.get("/getDoctors",function(req,res){
+    res.send(doctors);
+});
+
 
 app.post("/addstate",function(req,res){
     let {stateName,cities} = req.body;
@@ -114,3 +143,17 @@ app.delete("/deletehospital/:stateName/:cityName/:hospitalName",function(req,res
         res.status(404).send("State Name is Not Found");
     }
 });
+
+app.get("/getpatient",function(req,res){
+    res.send(patients);
+});
+
+
+app.post("/addpatient",function(req,res){
+    let body = req.body;
+    let mxId = patients.reduce((acc,curr)=>curr.id>acc?curr.id:acc,0);
+    let newPatient = {id:mxId+1, ...body};
+    console.log(newPatient);
+    patients.push(newPatient);
+    
+})

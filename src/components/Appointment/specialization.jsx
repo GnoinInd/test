@@ -1,11 +1,17 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import http from "../../services/httpService";
 class Specialization extends Component{
     state={
-        specztions:["Anatomical pathology","Anesthesiology","Cardiology","Cardiovascular & Thoracic Surgery","Clinical Immunology/Allergy","Critical Care Medicine","Dermatology","Diagnostic radiology","Gastroenterology","general surgeon","General pathology","Geriatric Medicine","Hematology","Medical Biochemistry","Medical Genetics","Medical Microbiology and Infectious Diseases","Medical oncology","Nephrology","Neurology","Neurosurgery","Ophthalmology","Orthopedic surgery","Otolaryngology ","Pediatrics"],
-        pageNo:1,findSpeztion:{speci:"",search:""},
+        specztions:[],pageNo:1,findSpeztion:{speci:"",search:""},
     }
 
+    async componentDidMount(){
+        let response =await http.get("/specztions");
+        const {data} = response;
+        console.log(data);
+        this.setState({specztions:data});
+    }
     
     handlePage=(page)=>{
         let s1 = {...this.state};
@@ -30,7 +36,7 @@ class Specialization extends Component{
         const {specztions,findSpeztion,arrSpeci,pageNo} = this.state;
         const {speci,search} = findSpeztion;
         let size = 6;
-        let valueArr = speci?specztions.filter(s1=>s1===speci):specztions;
+        let valueArr = speci?specztions.filter(s1=>s1.name===speci):specztions;
         let startIndex = (pageNo-1)*size;
         let endIndex = specztions.length>(startIndex +size-1)? (startIndex + size-1):specztions.length-1;
         let specztions1 = valueArr.filter((s1,index)=>(index>=startIndex && index<=endIndex));
@@ -51,7 +57,7 @@ class Specialization extends Component{
                         <select className="form-select cdsAw2" name="speci" value={speci} onChange={this.handleChange}>
                             <option value="" disabled >Choose Specialization</option>
                             {specztions.map((s1,index)=>(
-                                <option key={index}>{s1}</option>
+                                <option key={index}>{s1.name}</option>
                             ))}
                         </select>
                     </div>
@@ -69,8 +75,8 @@ class Specialization extends Component{
                     {specztions1.map((sp,index)=>(
                         <div className="col-lg-4 col-sm-6 col-12 mt-4 " key={index}>
                             <div className="fdeAw3">
-                                <img src="https://images.ctfassets.net/pxcfulgsd9e2/articleImage102459/49e52f299ff0badb87c859a6d0ce57bc/How-to-prepare-for-a-primary-care-visit-HN1433-iStock-843331126-Sized.png?f=top&fit=fill&fm=png&h=786&q=85&w=1396" width="100%" />
-                                <div className="mt-4"><Link className="laSew3" to="/hospitals">{sp}</Link></div>
+                                <img src={sp.img} width="100%" height="240px" />
+                                <div className="mt-4"><Link className="laSew3" to={{pathname:`/hospitals/${sp.id}`,state:{specztions:sp.name}}}>{sp.name}</Link></div>
                             </div>
                         </div>
                     ))}

@@ -5,20 +5,32 @@ import  "./style.css";
 import Specialization from "./specialization";
 import Rank from "./ranks";
 import Hospital from "./hospitals";
-import Dr from "./drs";
+import ChooseDoctors from "./Doctors";
 import SignIn from "./signIn";
 import PatientDetails from "./patientDetails";
 import MobileVerify from "./mobileVerify";
 import PaymentDetails from "./paymentDetails";
 import ConfirmAppoint from "./confirmAppoint";
-import Admin from "./dashboard"
+
+import Admin from "./admin/dashboard";
+import BuildProfile from "./admin/buildProfile";
+import MobileVry from "./admin/mobileVry";
+import AddHospital from "./admin/addHospital";
+import AddSpeciality from "./admin/addSpeciality";
+import Profile from "./admin/profile";
+
+import BasicDetails from "./admin/basicDetails";
+import Nationality from "./admin/nationality";
+import Communication from "./admin/communication";
+import Address from "./admin/address";
+
 
 class MainComponent extends Component{
     state={isOpen:false
 
     }
     componentDidMount(){
-        setTimeout(this.togglePopup, 2000);
+        // setTimeout(this.togglePopup, 2000);
     }
     togglePopup=()=>{
         let s1={...this.state};
@@ -39,14 +51,25 @@ class MainComponent extends Component{
             <div>
                 <Switch>
 
+                    <Route path="/address" component={Address}/>
+                    <Route path="/communication" component={Communication}/>
+                    <Route path="/basic" component={BasicDetails}/>
+
+                    <Route path="/profile" component={Profile}/>
+                    <Route path="/addSpeciality" component={AddSpeciality}/>
+                    <Route path="/addHospital" component={AddHospital}/>
+                    <Route path="/mobileVry" component={MobileVry}/>
+                    <Route path="/buildProfile" component={BuildProfile}/>
                     <Route path="/admin" component={Admin}/>
+
+
                     <Route path="/confirmAppoint" component={ConfirmAppoint}/>
                     <Route path="/payment" component={PaymentDetails}/>
                     <Route path="/mobileverify" component={MobileVerify}/>
                     <Route path="/patientDetails" component={PatientDetails}/>
                     <Route path="/signin" component={SignIn}/>
-                    <Route path="/dr" component={Dr}/>
-                    <Route path="/hospitals" component={Hospital}/>
+                    <Route path="/chooseDoctors/:hid" component={ChooseDoctors}/>
+                    <Route path="/hospitals/:specizId" component={Hospital}/>
                     <Route path="/rank" component={Rank}/>
                     <Route path="/Specialization" component={Specialization}/>
                     <Route path="/home" component={Home}/>
